@@ -17,6 +17,9 @@ public class PlayerData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Sun.InSun(gameObject))
+        {
+            print("in the sun");
+        }
     }
 }
