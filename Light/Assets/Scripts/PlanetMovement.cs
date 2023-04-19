@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlanetMovment : MonoBehaviour
+public class PlanetMovement : MonoBehaviour
 {
+    private bool moving;
     // Start is called before the first frame update
     void Start()
     {
+        moving = false;
         MoveToPosition(new Vector3(2, 2));
     }
 
@@ -23,6 +25,7 @@ public class PlanetMovment : MonoBehaviour
 
     private IEnumerator Move(Vector2 startPosition, Vector2 endPosition, float timeInSeconds)
     {
+        moving= true;
         int i = 0;
 
         while (Vector3.Distance(transform.position,endPosition) > 0.1f)
@@ -37,7 +40,13 @@ public class PlanetMovment : MonoBehaviour
 
             yield return new WaitForSeconds(timeInSeconds/120);
         }
+        moving = false;
 
 
     } 
+
+    public bool IsMoving()
+    {
+        return moving;
+    }
 }
