@@ -18,7 +18,7 @@ public class PlanetMovement : MonoBehaviour
         
     }
 
-    public void MoveToPosition(Vector2 position, float timeInSeconds = 3)
+    public void MoveToPosition(Vector2 position, float timeInSeconds = 1)
     {
         StartCoroutine(Move(transform.position, position, timeInSeconds));
     }
