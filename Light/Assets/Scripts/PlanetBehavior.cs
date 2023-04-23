@@ -7,31 +7,31 @@ public class PlanetBehavior : MonoBehaviour
 {
     public bool PlanetDead = false;
     public float PlanetHealth = 50;
-    public GameObject Planet;
-    private float CurrentHealth, StartingHealth;
+    public GameObject Planet, PlanetPrefab;
+    private float CurrentHealth, StartingHealth, NewPlanetHealth;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //private float NewPlanetHealth;
+        GameObject PlanetPrefab = Resources.Load("Planet") as GameObject; //doesnt work
     }
 
-    // Update is called once per frame
     void Update()
     {
-       if(PlanetDead == true) //check if planet is dead, move offscreen, give more health
+       if(PlanetDead == true) 
         {
-            Planet.transform.position = new Vector3(20, 20, 0); //teleports planet off screen
+            //*check if planet is dead, move offscreen, give more health, change sprite
+
+            //Planet.transform.position = new Vector3(20, 20, 0); //teleports planet off screen
             //NewPlanetHealth = PlanetHealth + 20;
             //PlanetHealth = NewPlanetHealth;
-            //Destroy(Planet);
 
-                        //change art to next planet
+            Destroy(Planet); //*causes errors in sun script
+            Instantiate(PlanetPrefab, new Vector3(0, 0, 0), Quaternion.identity);
             PlanetDead = false;
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision) // check if player is colliding *doesnt work
     {
         Debug.Log("collision");
     }
