@@ -11164,8 +11164,10 @@ GameObject:
   - component: {fileID: 2128393371}
   - component: {fileID: 2128393370}
   - component: {fileID: 2128393373}
+  - component: {fileID: 2128393376}
   - component: {fileID: 2128393375}
   - component: {fileID: 2128393374}
+  - component: {fileID: 2128393377}
   m_Layer: 6
   m_Name: Planet
   m_TagString: Untagged
@@ -11288,3 +11290,34 @@ MonoBehaviour:
   - -2
   - -3
   - 3
+--- !u!114 &2128393376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128393369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4511b006d17a822478bd2c6777fda331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlanetDead: 0
+  PlanetHealth: 50
+  Planet: {fileID: 2128393369}
+--- !u!58 &2128393377
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128393369}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.55
